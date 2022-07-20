@@ -1,7 +1,7 @@
 
 $("document").ready(function () {
   //scrollTop
-  $(".top a").click(function (event) {
+  $(".top a i").click(function (event) {
     event.preventDefault();
     $("html,body").animate({ scrollTop: 0 }, 1000);
   });
