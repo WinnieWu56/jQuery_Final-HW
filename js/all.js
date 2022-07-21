@@ -1,5 +1,11 @@
-
 $("document").ready(function () {
+  //menuDropDown
+  $(".nav_menu_dropDown").click(function (event) {
+    event.preventDefault();
+    $(this).toggleClass("active");
+    $(this).siblings(".dropDown_open").slideToggle();
+  });
+
   //scrollTop
   $(".top a i").click(function (event) {
     event.preventDefault();
@@ -18,7 +24,7 @@ $("document").ready(function () {
     autoplay: {
       delay: 6000,
     },
-    direction:'horizontal',
+    direction: "horizontal",
 
     // If we need pagination
     pagination: {

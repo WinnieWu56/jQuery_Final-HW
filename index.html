@@ -37,8 +37,21 @@
         <img src="images/logo.png" alt="nav logo" class="nav_logo" />
         <ul class="nav_menu">
           <li><a href="#">首頁</a></li>
-          <li><a href="#">產品介紹</a></li>
-          <li><a href="#">聯絡我們</a></li>
+          <li>
+            <a class="nav_menu_dropDown" href="#">產品介紹</a>
+            <ul class="dropDown_open">
+              <li><a href="#">Html 5 基礎</a></li>
+              <li><a href="#">響應式設計</a></li>
+              <li><a href="#">jQuery 實戰</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav_menu_dropDown" href="#">聯絡我們</a>
+            <ul class="dropDown_open">
+              <li><a href="#">常見問答</a></li>
+              <li><a href="#">企業方案</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
       <div class="banner">
@@ -74,7 +87,7 @@
             data-title="Html 5 基礎教學
           主流前端網站設計的基礎就在六角學院，在這裡不再是填鴨式教學，而是透過實際的範例，了解正確的網站開發流程，講師均具有藉藉開發經驗，讓學員學習業界主流的開發方法。"
           >
-            <img src="images/html5.png" alt="html"
+            <img class="html" src="images/html5.png" alt="html"
           /></a>
           <h4>Html 5 基礎教學</h4>
           <p>
@@ -83,7 +96,7 @@
         </li>
         <li class="course_item">
           <a href="images/RWD.png" data-lightbox="course">
-            <img src="images/RWD.png" alt="RWD"
+            <img class="RWD" src="images/RWD.png" alt="RWD"
           /></a>
           <h4>響應式網站設計</h4>
           <p>
@@ -93,7 +106,7 @@
         </li>
         <li class="course_item">
           <a href="images/jQuery.png" data-lightbox="course">
-            <img src="images/jQuery.png" alt="jQuery"
+            <img class="jQuery" src="images/jQuery.png" alt="jQuery"
           /></a>
           <h4>jQuery 實戰教學</h4>
           <p>本課程有以下特色</p>

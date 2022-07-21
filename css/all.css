@@ -1338,12 +1338,27 @@ body.lb-disable-scrolling {
   display: flex;
 }
 .header .nav .nav_menu li a {
-  padding: 16px 10px;
+  padding: 16px 22px;
   color: #00cc99;
   border-bottom: 2px solid transparent;
+  position: relative;
 }
-.header .nav .nav_menu li a:hover {
+.header .nav .nav_menu li a:hover, .header .nav .nav_menu li a.active {
   border-bottom: 2px solid #00cc99;
+}
+.header .nav .nav_menu li > .dropDown_open {
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+.header .nav .nav_menu li > .dropDown_open li a {
+  background: white;
+  font-weight: normal;
+  text-align: center;
+}
+.header .nav .nav_menu li > .dropDown_open li a:hover {
+  background: #00cc99;
+  color: white;
 }
 .header .banner {
   max-width: 1000px;
@@ -1394,6 +1409,15 @@ body.lb-disable-scrolling {
       -ms-flex-align: center;
           align-items: center;
 }
+.course .course_item .html {
+  margin: 24px 0px 14px 0px;
+}
+.course .course_item .RWD {
+  margin: 42px 0px 50px 0px;
+}
+.course .course_item .jQuery {
+  margin: 34px 0px 22px 0px;
+}
 .course .course_item h4 {
   font-weight: bold;
   margin: 14px 10px;
@@ -1413,6 +1437,9 @@ body.lb-disable-scrolling {
 .compare .pure-table {
   border: none;
   width: 100%;
+}
+.compare .pure-table tr:hover {
+  background: #ccfff2;
 }
 .compare .pure-table td,
 .compare .pure-table th {
