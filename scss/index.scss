@@ -1,4 +1,4 @@
-.wrap{
+.wrap {
   position: relative;
 }
 
@@ -8,22 +8,44 @@
   padding: 0px 20px;
 }
 
-.aside{
-  display:none;
-  @include phone(){
-    display:block;
-    position:absolute;
-    z-index:20;
-    top:58px;
-    bottom:0;
-    right:0;
-    background:$primary-color;
-    li a{
-      padding: 16px 20px;
-      color:white;
-      &:active{
-        background:white;
-        color:$primary-color;
+.aside {
+  display: none;
+  @include phone() {
+    display: block;
+    .m-menu {
+      position: absolute;
+      z-index: 20;
+      top: 68px;
+      bottom: 0;
+      right: 0;
+      background: $primary-color;
+      // transform: translateX(128px);
+      // overflow:hidden;
+      // transition: transform 1s;
+      display:none;
+      li a {
+        padding: 16px 32px;
+        color: white;
+        &.active {
+          background: white;
+          color: $primary-color;
+        }
+      }
+      &.active {
+        // transform: translateX(0px);
+        display:block;
+      }
+      .m-dropDown_open{
+        display: none;
+        li a{
+          font-size: 14px;
+          font-weight: normal;
+          background:darken($primary-color,5%);
+          border-bottom: 2px solid transparent;
+          &:hover,&:active{
+            border-bottom: 2px solid white;
+          }
+        }
       }
     }
   }
@@ -95,6 +117,9 @@
         }
       }
     }
+    i {
+      display: none;
+    }
   }
   .banner {
     max-width: 1000px;
@@ -126,21 +151,33 @@
     }
   }
   @include phone() {
-    .media{
-      display:none;
+    .media {
+      display: none;
     }
     .banner {
       .banner_title {
         top: 80px;
       }
     }
+    .nav {
+      padding: 16px 0px;
+      .nav_menu {
+        display: none;
+      }
+      i {
+        display: block;
+        font-size: 26px;
+        color: $primary-color;
+        margin-right: 20px;
+      }
+    }
   }
-  @include iphoneXR(){
-    .banner{
-      .banner_title{
-        top:56px;
+  @include iphoneXR() {
+    .banner {
+      .banner_title {
+        top: 56px;
         padding: 18px 20px;
-        h1{
+        h1 {
           font-size: 28px;
         }
       }
@@ -193,9 +230,9 @@
       margin-bottom: 20px;
     }
   }
-  @include iphoneXR(){
-    .course_item{
-      width:88%;
+  @include iphoneXR() {
+    .course_item {
+      width: 88%;
     }
   }
 }
@@ -221,9 +258,9 @@
       color: $primary-color;
     }
   }
-  @include iphoneXR(){
-    .pure-table{
-      .m-none{
+  @include iphoneXR() {
+    .pure-table {
+      .m-none {
         display: none;
       }
     }
@@ -263,7 +300,7 @@
         float: right;
       }
     }
-  }  
+  }
 }
 
 .footer {
@@ -278,8 +315,8 @@
       }
     }
   }
-  @include iphoneXR(){
-    .footer_logo{
+  @include iphoneXR() {
+    .footer_logo {
       display: none;
     }
   }

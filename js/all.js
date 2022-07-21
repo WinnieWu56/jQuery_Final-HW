@@ -5,6 +5,17 @@ $("document").ready(function () {
     $(this).toggleClass("active");
     $(this).siblings(".dropDown_open").slideToggle();
   });
+  //m-menu show
+  $('.nav i').click(function(){
+    $('.m-menu').toggleClass('active');
+  });
+  //m-menu dropDown open
+  $('.m-dropDown').click(function(){
+    $(this).addClass('active');
+    $(this).parent('li').siblings().find('a').removeClass('active');
+    $(this).siblings('.m-dropDown_open').slideToggle();
+    $(this).parent('li').siblings('li').find('ul').slideUp();
+  });
 
   //scrollTop
   $(".top a i").click(function (event) {
