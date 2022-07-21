@@ -1283,14 +1283,41 @@ body.lb-disable-scrolling {
   opacity: 1;
 }
 
+.wrap {
+  position: relative;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0px 20px;
 }
 
+.aside {
+  display: none;
+}
+@media (max-width: 568px) {
+  .aside {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    top: 58px;
+    bottom: 0;
+    right: 0;
+    background: #00cc99;
+  }
+  .aside li a {
+    padding: 16px 20px;
+    color: white;
+  }
+  .aside li a:active {
+    background: white;
+    color: #00cc99;
+  }
+}
+
 .header .media .container {
-  padding: 5px 0px;
+  padding: 5px 6px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1366,8 +1393,8 @@ body.lb-disable-scrolling {
   position: relative;
 }
 .header .banner .swiper {
-  width: 1000px;
-  height: 500px;
+  width: 100%;
+  height: 50%;
 }
 .header .banner .banner_title {
   background: rgba(0, 0, 0, 0.3);
@@ -1381,6 +1408,28 @@ body.lb-disable-scrolling {
   font-size: 32px;
   color: white;
   line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .header .banner .banner_title {
+    top: 130px;
+  }
+}
+@media (max-width: 568px) {
+  .header .media {
+    display: none;
+  }
+  .header .banner .banner_title {
+    top: 80px;
+  }
+}
+@media (max-width: 414px) {
+  .header .banner .banner_title {
+    top: 56px;
+    padding: 18px 20px;
+  }
+  .header .banner .banner_title h1 {
+    font-size: 28px;
+  }
 }
 
 .course {
@@ -1425,6 +1474,30 @@ body.lb-disable-scrolling {
 .course .course_item p {
   text-align: justify;
 }
+@media (max-width: 768px) {
+  .course .course_item {
+    width: 32%;
+  }
+  .course .course_item p {
+    text-align: left;
+  }
+}
+@media (max-width: 568px) {
+  .course {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .course .course_item {
+    width: 76%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 414px) {
+  .course .course_item {
+    width: 88%;
+  }
+}
 
 .compare {
   margin-bottom: 62px;
@@ -1438,7 +1511,7 @@ body.lb-disable-scrolling {
   border: none;
   width: 100%;
 }
-.compare .pure-table tr:hover {
+.compare .pure-table tbody tr:hover {
   background: #ccfff2;
 }
 .compare .pure-table td,
@@ -1447,6 +1520,11 @@ body.lb-disable-scrolling {
 }
 .compare .pure-table .highlight {
   color: #00cc99;
+}
+@media (max-width: 414px) {
+  .compare .pure-table .m-none {
+    display: none;
+  }
 }
 
 .contact {
@@ -1501,6 +1579,11 @@ body.lb-disable-scrolling {
 }
 .footer .footer_info li span {
   color: #e72d71;
+}
+@media (max-width: 414px) {
+  .footer .footer_logo {
+    display: none;
+  }
 }
 
 .top a {
