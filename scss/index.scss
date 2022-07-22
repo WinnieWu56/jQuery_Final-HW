@@ -263,6 +263,16 @@
       .m-none {
         display: none;
       }
+      td,th{
+        font-size: 13px;
+      }
+    }
+  }
+  @include iphoneSE() {
+    .pure-table {
+      td,th{
+        font-size: 12px;
+      }
     }
   }
 }
@@ -298,6 +308,33 @@
       .pure-button-primary {
         padding: 8px 20px;
         float: right;
+      }
+    }
+  }
+  @include phone(){
+    .pure-form-stacked{
+      .pure-input-1-2{
+        width:58%;
+      }
+      .contact_info{
+        width: 38%;        
+        .pure-button-primary {
+          padding: 6px 16px;
+          float: right;
+        }
+      }
+    }
+  }
+  @include iphoneXR(){
+    .pure-form-stacked{
+      flex-direction: column;
+      align-items: center;
+      .pure-input-1-2{
+        width:80%;
+        margin-bottom: 10px;
+      }
+      .contact_info{
+        width:80%;
       }
     }
   }
