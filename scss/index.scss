@@ -1,28 +1,25 @@
+//wrap start
 .wrap {
   position: relative;
 }
+//wrap end
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0px 20px;
-}
-
+//aside start
 .aside {
   display: none;
   @include phone() {
     display: block;
     .m-menu {
       position: absolute;
-      z-index: 20;
+      z-index: 15;
       top: 68px;
       bottom: 0;
       right: 0;
       background: $primary-color;
-      // transform: translateX(128px);
-      // overflow:hidden;
-      // transition: transform 1s;
-      display:none;
+      transform: translateX(128px);
+      overflow:hidden;
+      transition: transform 1s;
+      // display: none;
       li a {
         padding: 16px 32px;
         color: white;
@@ -32,17 +29,18 @@
         }
       }
       &.active {
-        // transform: translateX(0px);
-        display:block;
+        transform: translateX(0px);
+        // display: block;
       }
-      .m-dropDown_open{
+      .m-dropDown_open {
         display: none;
-        li a{
+        li a {
           font-size: 14px;
           font-weight: normal;
-          background:darken($primary-color,5%);
+          background: darken($primary-color, 5%);
           border-bottom: 2px solid transparent;
-          &:hover,&:active{
+          &:hover,
+          &:active {
             border-bottom: 2px solid white;
           }
         }
@@ -50,74 +48,84 @@
     }
   }
 }
+//aside end
 
+//header start
 .header {
   .media {
-    .container {
-      padding: 5px 6px;
-      display: flex;
-      justify-content: flex-end;
-      background: $third-color;
-      .media_fb {
-        margin-right: 6px;
-        border-right: 1px solid $secondary-color;
-        a {
-          color: #45609e;
-          margin-right: 6px;
-          img {
-            margin-right: 2px;
-          }
-        }
+    padding: 5px 6px;
+    justify-content: flex-end;
+    background: $third-color;
+    @include phone() {
+      display: none;
+    }
+  }
+  .media_fb {
+    margin-right: 6px;
+    border-right: 1px solid $secondary-color;
+    a {
+      color: #45609e;
+      margin-right: 6px;
+      img {
+        margin-right: 2px;
       }
-      .media_twitter {
-        a {
-          color: #02adf6;
-          img {
-            margin-right: 2px;
-          }
-        }
+    }
+  }
+  .media_twitter {
+    a {
+      color: #02adf6;
+      img {
+        margin-right: 2px;
       }
     }
   }
   .nav {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    .nav_logo {
-      padding-left: 20px;
+    i {
+      display: none;
     }
-    .nav_menu {
-      display: flex;
-      li {
-        a {
-          padding: 16px 22px;
-          color: $primary-color;
-          border-bottom: 2px solid transparent;
-          position: relative;
-          &:hover,
-          &.active {
-            border-bottom: 2px solid $primary-color;
-          }
+    @include phone() {
+      padding: 16px 0px;
+      i {
+        display: block;
+        font-size: 26px;
+        color: $primary-color;
+        margin-right: 20px;
+      }
+    }
+  }
+  .nav_logo {
+    padding-left: 20px;
+  }
+  .nav_menu {
+    li {
+      a {
+        padding: 16px 22px;
+        color: $primary-color;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        &:hover,
+        &.active {
+          border-bottom: 2px solid $primary-color;
         }
-        > .dropDown_open {
-          display: none;
-          position: absolute;
-          z-index: 10;
-          li a {
-            background: white;
-            font-weight: normal;
-            text-align: center;
-            &:hover {
-              background: $primary-color;
-              color: white;
-            }
+      }
+      > .dropDown_open {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        li a {
+          padding: 16px 12px;
+          background: white;
+          font-weight: normal;
+          text-align: center;
+          &:hover {
+            background: $primary-color;
+            color: white;
           }
         }
       }
     }
-    i {
+    @include phone() {
       display: none;
     }
   }
@@ -129,117 +137,101 @@
       width: 100%;
       height: 50%;
     }
-    .banner_title {
-      background: rgba($color: #000000, $alpha: 0.3);
-      padding: 36px 20px;
-      position: absolute;
-      z-index: 10;
-      top: 176px;
-      width: 100%;
+  }
+  .banner_title {
+    background: rgba($color: #000000, $alpha: 0.3);
+    padding: 36px 20px;
+    position: absolute;
+    z-index: 5;
+    top: 176px;
+    width: 100%;
+    h1 {
+      font-size: 32px;
+      color: white;
+      line-height: 1.5;
+    }
+    @include pad() {
+      top: 130px;
+    }
+    @include phone() {
+      top: 80px;
+    }
+    @include iphoneXR() {
+      top: 56px;
+      padding: 18px 20px;
       h1 {
-        font-size: 32px;
-        color: white;
-        line-height: 1.5;
-      }
-    }
-  }
-  @include pad() {
-    .banner {
-      .banner_title {
-        top: 130px;
-      }
-    }
-  }
-  @include phone() {
-    .media {
-      display: none;
-    }
-    .banner {
-      .banner_title {
-        top: 80px;
-      }
-    }
-    .nav {
-      padding: 16px 0px;
-      .nav_menu {
-        display: none;
-      }
-      i {
-        display: block;
-        font-size: 26px;
-        color: $primary-color;
-        margin-right: 20px;
-      }
-    }
-  }
-  @include iphoneXR() {
-    .banner {
-      .banner_title {
-        top: 56px;
-        padding: 18px 20px;
-        h1 {
-          font-size: 28px;
-        }
+        font-size: 28px;
       }
     }
   }
 }
+//header end
 
+//course start
 .course {
   margin: 62px 0px;
-  display: flex;
-  justify-content: space-between;
-  .course_item {
-    width: 30%;
-    box-shadow: 1px 1px 3px $secondary-color;
-    border-radius: 5px;
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .html {
-      margin: 24px 0px 14px 0px;
-    }
-    .RWD {
-      margin: 42px 0px 50px 0px;
-    }
-    .jQuery {
-      margin: 34px 0px 22px 0px;
-    }
-    h4 {
-      font-weight: bold;
-      margin: 14px 10px;
-    }
-    p {
-      text-align: justify;
-    }
+  @include phone() {
+    flex-wrap: wrap;
+  }
+}
+.course_item {
+  width: 30%;
+  box-shadow: 1px 1px 3px $secondary-color;
+  border-radius: 5px;
+  padding: 24px 20px;
+  &:hover{
+    box-shadow: 1px 1px 5px $secondary-color;
+  }
+  .html {
+    padding: 24px 0px 14px 0px;
+    //圖片置中
+    display: block;
+    margin: 0 auto;
+  }
+  .RWD {
+    padding: 42px 0px 50px 0px;
+    display: block;
+    margin: 0 auto;
+  }
+  .jQuery {
+    padding: 34px 0px 22px 0px;
+    display: block;
+    margin: 0 auto;
+  }
+  h3 {
+    font-weight: bold;
+    margin: 14px 10px;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    text-align: justify;
+  }
+  ul li {
+    list-style-type: disc;
+    margin-left: 26px;
   }
   @include pad() {
-    .course_item {
-      width: 32%;
-      p {
-        text-align: left;
-      }
+    width: 32%;
+    p {
+      text-align: left;
     }
   }
   @include phone() {
-    flex-wrap: wrap;
-    .course_item {
-      width: 76%;
-      margin: 0 auto;
-      margin-bottom: 20px;
-    }
+    width: 76%;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
   @include iphoneXR() {
-    .course_item {
-      width: 88%;
-    }
+    width: 88%;
   }
 }
+//course end
 
+//compare start
 .compare {
   margin-bottom: 62px;
-  h3 {
+  h2 {
     font-size: 22px;
     text-align: center;
     margin-bottom: 30px;
@@ -263,20 +255,24 @@
       .m-none {
         display: none;
       }
-      td,th{
+      td,
+      th {
         font-size: 13px;
       }
     }
   }
   @include iphoneSE() {
     .pure-table {
-      td,th{
+      td,
+      th {
         font-size: 12px;
       }
     }
   }
 }
+//compare end
 
+//contact start
 .contact {
   background: linear-gradient(
     darken($primary-color, 20%),
@@ -290,8 +286,6 @@
     text-align: center;
   }
   .pure-form-stacked {
-    display: flex;
-    justify-content: space-between;
     .pure-input-1-2 {
       width: 48%;
     }
@@ -311,13 +305,13 @@
       }
     }
   }
-  @include phone(){
-    .pure-form-stacked{
-      .pure-input-1-2{
-        width:58%;
+  @include phone() {
+    .pure-form-stacked {
+      .pure-input-1-2 {
+        width: 58%;
       }
-      .contact_info{
-        width: 38%;        
+      .contact_info {
+        width: 38%;
         .pure-button-primary {
           padding: 6px 16px;
           float: right;
@@ -325,40 +319,41 @@
       }
     }
   }
-  @include iphoneXR(){
-    .pure-form-stacked{
+  @include iphoneXR() {
+    .pure-form-stacked {
       flex-direction: column;
       align-items: center;
-      .pure-input-1-2{
-        width:80%;
+      .pure-input-1-2 {
+        width: 80%;
         margin-bottom: 10px;
       }
-      .contact_info{
-        width:80%;
+      .contact_info {
+        width: 80%;
       }
     }
   }
 }
+//contact end
 
+//footer start
 .footer {
-  margin: 24px 0px;
-  display: flex;
-  justify-content: space-between;
+  padding: 24px 20px;
   align-items: center;
-  .footer_info {
-    li {
-      span {
-        color: #e72d71;
-      }
-    }
-  }
   @include iphoneXR() {
     .footer_logo {
       display: none;
     }
   }
 }
+.footer_info {
+  li a {
+    color: #e72d71;
+    display: inline;
+  }
+}
+//footer end
 
+//top start
 .top {
   a {
     background: $primary-color;
@@ -374,3 +369,4 @@
     margin: 10px;
   }
 }
+//top end

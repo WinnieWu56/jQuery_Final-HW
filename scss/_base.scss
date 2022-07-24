@@ -26,5 +26,17 @@ h1,h2,h3,h4,h5,h6,li,p,td,th,input,button,textarea{
 textarea{
   resize:none;
 }
-
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.prpl20{
+  padding: 0px 20px;
+}
+.flex{
+  display: flex;
+}
+.jcsb{
+  justify-content: space-between;
+}
 

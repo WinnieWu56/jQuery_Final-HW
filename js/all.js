@@ -2,8 +2,10 @@ $("document").ready(function () {
   //menuDropDown
   $(".nav_menu_dropDown").click(function (event) {
     event.preventDefault();
-    $(this).toggleClass("active");
+    $(this).toggleClass('active');
+    $(this).parent('li').siblings().find('a').removeClass('active');
     $(this).siblings(".dropDown_open").slideToggle();
+    $(this).parent('li').siblings('li').find('ul').slideUp();
   });
   //m-menu show
   $('.nav i').click(function(){
@@ -11,14 +13,13 @@ $("document").ready(function () {
   });
   //m-menu dropDown open
   $('.m-dropDown').click(function(){
-    $(this).addClass('active');
+    $(this).toggleClass('active');
     $(this).parent('li').siblings().find('a').removeClass('active');
     $(this).siblings('.m-dropDown_open').slideToggle();
     $(this).parent('li').siblings('li').find('ul').slideUp();
   });
-
   //scrollTop
-  $(".top a i").click(function (event) {
+  $(".top a").click(function (event) {
     event.preventDefault();
     $("html,body").animate({ scrollTop: 0 }, 1000);
   });
@@ -33,7 +34,7 @@ $("document").ready(function () {
     direction: "vertical",
     loop: true,
     autoplay: {
-      delay: 6000,
+      delay: 5000,
     },
     direction: "horizontal",
 
