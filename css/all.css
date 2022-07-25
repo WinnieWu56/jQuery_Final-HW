@@ -1322,8 +1322,8 @@ body.lb-disable-scrolling {
     bottom: 0;
     right: 0;
     background: #00cc99;
-    -webkit-transform: translateX(128px);
-            transform: translateX(128px);
+    -webkit-transform: translateX(160px);
+            transform: translateX(160px);
     overflow: hidden;
     -webkit-transition: -webkit-transform 1s;
     transition: -webkit-transform 1s;
@@ -1331,6 +1331,7 @@ body.lb-disable-scrolling {
     transition: transform 1s, -webkit-transform 1s;
   }
   .aside .m-menu li a {
+    width: 160px;
     padding: 16px 32px;
     color: white;
   }
@@ -1346,7 +1347,6 @@ body.lb-disable-scrolling {
     display: none;
   }
   .aside .m-menu .m-dropDown_open li a {
-    font-size: 14px;
     font-weight: normal;
     background: #00b386;
     border-bottom: 2px solid transparent;
@@ -1408,7 +1408,9 @@ body.lb-disable-scrolling {
   padding-left: 20px;
 }
 .header .nav_menu li a {
-  padding: 16px 22px;
+  width: 120px;
+  padding: 16px 0;
+  text-align: center;
   color: #00cc99;
   border-bottom: 2px solid transparent;
   position: relative;
@@ -1422,7 +1424,6 @@ body.lb-disable-scrolling {
   z-index: 10;
 }
 .header .nav_menu li > .dropDown_open li a {
-  padding: 16px 12px;
   background: white;
   font-weight: normal;
   text-align: center;

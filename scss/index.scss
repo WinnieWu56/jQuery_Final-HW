@@ -16,11 +16,12 @@
       bottom: 0;
       right: 0;
       background: $primary-color;
-      transform: translateX(128px);
+      transform: translateX(160px);
       overflow:hidden;
       transition: transform 1s;
       // display: none;
       li a {
+        width:160px;
         padding: 16px 32px;
         color: white;
         &.active {
@@ -35,7 +36,6 @@
       .m-dropDown_open {
         display: none;
         li a {
-          font-size: 14px;
           font-weight: normal;
           background: darken($primary-color, 5%);
           border-bottom: 2px solid transparent;
@@ -100,7 +100,9 @@
   .nav_menu {
     li {
       a {
-        padding: 16px 22px;
+        width: 120px;
+        padding: 16px 0;
+        text-align: center;
         color: $primary-color;
         border-bottom: 2px solid transparent;
         position: relative;
@@ -114,7 +116,6 @@
         position: absolute;
         z-index: 10;
         li a {
-          padding: 16px 12px;
           background: white;
           font-weight: normal;
           text-align: center;
