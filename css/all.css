@@ -1306,6 +1306,7 @@ body.lb-disable-scrolling {
 
 .wrap {
   position: relative;
+  overflow-x: hidden;
 }
 
 .aside {
@@ -1324,7 +1325,6 @@ body.lb-disable-scrolling {
     background: #00cc99;
     -webkit-transform: translateX(160px);
             transform: translateX(160px);
-    overflow: hidden;
     -webkit-transition: -webkit-transform 1s;
     transition: -webkit-transform 1s;
     transition: transform 1s;
@@ -1578,6 +1578,7 @@ body.lb-disable-scrolling {
   .compare .pure-table td,
 .compare .pure-table th {
     font-size: 13px;
+    padding: 8px 12px;
   }
 }
 @media (max-width: 375px) {

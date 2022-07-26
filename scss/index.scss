@@ -1,6 +1,7 @@
 //wrap start
 .wrap {
   position: relative;
+  overflow-x:hidden;
 }
 //wrap end
 
@@ -17,7 +18,7 @@
       right: 0;
       background: $primary-color;
       transform: translateX(160px);
-      overflow:hidden;
+      // overflow:hidden;
       transition: transform 1s;
       // display: none;
       li a {
@@ -259,6 +260,7 @@
       td,
       th {
         font-size: 13px;
+        padding: 8px 12px;
       }
     }
   }
